@@ -1,40 +1,37 @@
-# 🌌 Astronomy 3D Simulator
+# Astronomy 2D Simulator
 
-A **real-time 3D Solar System simulator** built using **C++ and OpenGL (GLUT)**.
-This project visually represents the solar system with animated planets, realistic orbital motion, lighting, and a dynamic starfield.
-
----
-
-## 🚀 Features
-
-✨ **Core Highlights**
-
-* 🌞 Realistic **Sun** with glowing animation & pulsating rays
-* 🪐 **All 8 planets** orbiting with unique speed & distance
-* 🌍 **Earth's Moon** with independent orbit
-* 💫 **2000+ twinkling stars** for immersive background
-* 🌀 **Saturn’s rings** with custom geometry
-* 🔄 Toggleable **orbit paths**
-* 💡 Dynamic **lighting system** from the Sun
-* 🎮 Fully **interactive camera controls**
+This project is a 2D computer graphics simulation of a solar-system-inspired astronomy scene developed with C++ and OpenGL (GLUT). It was designed to satisfy academic graphics course requirements by combining basic drawing primitives, raster graphics algorithms, geometric transformations, and animation in a single interactive application.
 
 ---
 
-## 🎮 Controls
+## Project Features
+
+* Uses graphics primitives: points, lines, polygons, and circles
+* Implements DDA line drawing
+* Implements Bresenham line drawing
+* Implements Midpoint Circle drawing
+* Shows 9 celestial bodies: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, and Pluto
+* Shows animated orbiting planets, moon motion, and sun pulse
+* Demonstrates 2D transformations on a satellite: translation, rotation, scaling, and shearing on both axes
+* Includes a starfield, orbit rings, asteroid belt, nebula background, planet labels, and interactive keyboard controls
+
+---
+
+## User Controls
 
 | Key       | Action                     |
 | --------- | -------------------------- |
-| `W` / `S` | Move camera up / down      |
-| `A` / `D` | Rotate camera left / right |
-| `+` / `-` | Zoom in / out              |
+| Arrow keys | Move satellite            |
+| `R` / `T` | Rotate satellite +/-       |
+| `Z` / `X` | Scale satellite +/-        |
+| `H`       | Toggle X-axis shear        |
+| `J`       | Toggle Y-axis shear        |
 | `Space`   | Pause / Resume animation   |
-| `O`       | Toggle orbit paths         |
-| `L`       | Toggle lighting            |
 | `Esc`     | Exit application           |
 
 ---
 
-## 🧰 Technologies Used
+## Technologies Used
 
 * **C++**
 * **OpenGL**
@@ -43,7 +40,7 @@ This project visually represents the solar system with animated planets, realist
 
 ---
 
-## ⚙️ Installation & Build
+## Build Instructions
 
 ### 🐧 Linux (GCC)
 
@@ -65,37 +62,41 @@ g++ main.cpp -o main.exe -lfreeglut -lopengl32 -lglu32
 
 ---
 
-## 🪐 Planet Configuration
+## Assignment Mapping
 
-| Planet  | Distance | Radius | Color           |
-| ------- | -------- | ------ | --------------- |
-| Mercury | 10       | 1.2    | Gray            |
-| Venus   | 16       | 1.8    | Tan             |
-| Earth   | 24       | 2.0    | Blue 🌍         |
-| Mars    | 32       | 1.5    | Red 🔴          |
-| Jupiter | 45       | 4.5    | Orange-brown    |
-| Saturn  | 58       | 3.8    | Gold 🟡 (rings) |
-| Uranus  | 72       | 3.2    | Cyan 🔵         |
-| Neptune | 88       | 3.0    | Dark Blue 🔷    |
+* Basic primitives:
+  stars use points, orbit/rays/tails use lines, satellite and nebula use polygons, planets/sun/orbits use circles
+* Graphics algorithms:
+  DDA, Bresenham, and Midpoint Circle are all implemented and used directly in the drawing code
+* 2D transformations:
+  translation, rotation, scaling, and shearing along both axes are applied to the satellite via 3x3 matrices
+* Animation:
+  planets orbit continuously, the moon revolves around Earth, and the sun pulses
 
----
+## Visual Highlights
 
-## 📸 Future Improvements (Optional Ideas)
+* Sun with pulsating rays drawn using line and circle primitives
+* Labeled planets with different orbit radius, color, size, and speed
+* Earth moon system and Saturn ring effect
+* Animated asteroid belt with a controllable satellite
+* Extra transformation demo panel with a controllable satellite
 
-* 🌌 Add **asteroid belt**
-* 🌗 Planet **rotation on axis**
-* ☄️ Add **comets**
-* 🎥 Multiple **camera modes (top view / free fly)**
-* 🌍 Realistic **textures (NASA textures)**
+## Project Structure
 
----
+* `main.cpp` contains the full OpenGL/GLUT implementation
+* `main.exe` is the compiled Windows executable
+* `readme.md` contains setup and project documentation
 
-## 📄 License
+## Academic Relevance
+
+This project demonstrates the practical application of core computer graphics concepts in a visually understandable way. It is suitable for course submission, demonstration, and viva presentation because the required algorithms and transformations are both implemented in code and visible in the final simulation output.
+
+## License
 
 This project is provided for:
 
-* 🎓 Educational purposes
-* 🧪 Personal experiments
+* Educational purposes
+* Personal experiments
 
 
 ## Here is how to set up the standalone compiler and FreeGLUT.
