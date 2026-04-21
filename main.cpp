@@ -431,6 +431,19 @@ void drawPlanet(const Planet& planet, float centerX, float centerY) {
         Point2D moon = getOrbitPosition(pos.x, pos.y, 28.0f, moonAngle);
         glColor3f(0.82f, 0.82f, 0.86f);
         drawFilledCircle(static_cast<int>(moon.x), static_cast<int>(moon.y), 4);
+
+        Point2D satellite = getOrbitPosition(pos.x, pos.y, 20.0f, moonAngle * 1.8f + 60.0f);
+        glColor3f(0.82f, 0.90f, 0.98f);
+        drawFilledCircle(static_cast<int>(satellite.x), static_cast<int>(satellite.y), 2);
+
+        glColor3f(0.25f, 0.60f, 0.95f);
+        drawLineBresenham(static_cast<int>(satellite.x - 5), static_cast<int>(satellite.y),
+                          static_cast<int>(satellite.x - 2), static_cast<int>(satellite.y), 1.0f);
+        drawLineBresenham(static_cast<int>(satellite.x + 2), static_cast<int>(satellite.y),
+                          static_cast<int>(satellite.x + 5), static_cast<int>(satellite.y), 1.0f);
+
+        glColor3f(1.0f, 1.0f, 1.0f);
+        drawCircleMidpoint(static_cast<int>(satellite.x), static_cast<int>(satellite.y), 2, 1.0f);
     }
 
     if (planet.name == "Saturn") {
